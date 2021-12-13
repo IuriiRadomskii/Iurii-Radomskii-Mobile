@@ -11,12 +11,11 @@ import setup.BaseTest;
 
 public class nativeMobileTests extends BaseTest {
 
-    @Test(groups = {"native"}, description = "This simple test just click on the Sign In button")
+    @Test(groups = {"native"}, description = "Register new user, login and assert that Budget Page is opened")
     public void simpleNativeTest()
         throws InterruptedException {
         User user = new User("aaa@mail.ru", "aaa", "password4");
-        PageObject pageObject = getPageObject();
-        LoginPage loginPage = (LoginPage) pageObject.getEntryPageObject();
+        LoginPage loginPage = (LoginPage) getPageObject().getEntryPageObject();
         loginPage.getRegisterBtn().click();
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
         registrationPage.fillRegistrationFields(user);

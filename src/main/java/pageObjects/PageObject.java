@@ -14,17 +14,16 @@ public class PageObject implements IPageObject {
 
     public PageObject(String appType, AppiumDriver appiumDriver) throws Exception {
 
-        System.out.println("Current app type: "+appType);
+        System.out.println("Current app type: " + appType);
         switch(appType){
-            case "web":
-                entryPageObject = new WebPageObject(appiumDriver);
-                break;
             case "native":
                 entryPageObject = new LoginPage(appiumDriver);
                 break;
-            default: throw new Exception("Can't create a page object for "+appType);
+            case "web":
+                entryPageObject = new WebPageObject(appiumDriver);
+                break;
+            default: throw new Exception("Can't create a page object for " + appType);
         }
-
     }
 
     @Override
@@ -36,6 +35,10 @@ public class PageObject implements IPageObject {
     }
 
     public Object getEntryPageObject() {
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+            + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+            + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(entryPageObject.toString());
         return entryPageObject;
     }
 }

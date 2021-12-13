@@ -24,10 +24,11 @@ public class BaseTest implements IDriver {
 
     @Parameters({"platformName","appType","deviceName","browserName","app"})
     @BeforeSuite(alwaysRun = true)
-    public void setUp(String platformName, String appType, String deviceName, @Optional("") String browserName, @Optional("") String app) throws Exception {
-        System.out.println("Before: app type - "+appType);
+    public void setUp(@Optional("")String platformName, @Optional("")String appType, @Optional("")String deviceName, @Optional("") String browserName, @Optional("") String app) throws Exception {
+        String appTypee = "web";
+        System.out.println("Before: app type - " + appTypee);
         setAppiumDriver(platformName, deviceName, browserName, app);
-        setPageObject(appType, appiumDriver);
+        setPageObject(appTypee, appiumDriver);
     }
 
     @AfterSuite(alwaysRun = true)
@@ -39,13 +40,20 @@ public class BaseTest implements IDriver {
     private void setAppiumDriver(String platformName, String deviceName, String browserName, String app){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
-        capabilities.setCapability("platformName",platformName);
-        capabilities.setCapability("deviceName",deviceName);
+        //capabilities.setCapability("platformName",platformName);
+        //capabilities.setCapability("deviceName",deviceName);
+//
+        //if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
+//
+        //capabilities.setCapability("browserName", browserName);
+        //capabilities.setCapability("chromedriverDisableBuildCheck","true");
 
-        if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
-
-        capabilities.setCapability("browserName", browserName);
+        capabilities.setCapability("browserName", "Chrome");
         capabilities.setCapability("chromedriverDisableBuildCheck","true");
+        capabilities.setCapability("platformName","Android");
+        capabilities.setCapability("deviceName","R58R102XG4H");
+
+
 
         try {
             appiumDriver = new AppiumDriver(new URL(System.getProperty("ts.appium")), capabilities);
@@ -55,7 +63,6 @@ public class BaseTest implements IDriver {
 
         // Timeouts tuning
         appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
