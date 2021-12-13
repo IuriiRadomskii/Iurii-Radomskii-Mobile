@@ -33,6 +33,9 @@ public class PageObject implements IPageObject {
         Field field = entryPageObject.getClass().getDeclaredField(weName);
         field.setAccessible(true);
         return (WebElement) field.get(entryPageObject);
+    }
 
+    public Object getEntryPageObject() {
+        return entryPageObject;
     }
 }

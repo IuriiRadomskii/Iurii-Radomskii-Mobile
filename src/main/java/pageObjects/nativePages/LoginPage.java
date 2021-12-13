@@ -25,15 +25,24 @@ public class LoginPage {
         PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
     }
 
-    public void loginAsUser(User user) {
-        loginTextField.sendKeys(user.getUserName());
+    public void fillLoginFields(User user) {
+        loginTextField.sendKeys(user.getEmail());
         passwordTextField.sendKeys(user.getPassword());
-        signInBtn.click();
     }
 
+    public WebElement getLoginTextField() {
+        return loginTextField;
+    }
 
+    public WebElement getPasswordTextField() {
+        return passwordTextField;
+    }
 
+    public WebElement getSignInBtn() {
+        return signInBtn;
+    }
 
-
-
+    public WebElement getRegisterBtn() {
+        return registerBtn;
+    }
 }

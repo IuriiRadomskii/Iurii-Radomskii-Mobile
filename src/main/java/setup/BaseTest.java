@@ -18,7 +18,7 @@ public class BaseTest implements IDriver {
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
 
-    public IPageObject getPageObject() {
+    public PageObject getPageObject() {
         return po;
     }
 
@@ -61,6 +61,5 @@ public class BaseTest implements IDriver {
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         po = new PageObject(appType, appiumDriver);
     }
-
 
 }
