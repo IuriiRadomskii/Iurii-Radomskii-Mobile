@@ -1,9 +1,6 @@
 package scenarios;
 
-import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pageObjects.PageObject;
@@ -24,7 +21,7 @@ public class webMobileTests extends BaseTest {
         new WebDriverWait(getDriver(), 10)
             .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
         Thread.sleep(1000);
-        searchPageObject.assertSearchResultsRelevance("EPAM");
+        searchPageObject.assertResultsRelevance("EPAM");
         System.out.println("Site opening done");
     }
 }

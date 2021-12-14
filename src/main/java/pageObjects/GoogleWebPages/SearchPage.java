@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
 
-    @FindBy(xpath = "//div[@class='g']//h3")
+    @FindBy(xpath = "//div[@id='res']//h3")
     private List<WebElement> searchResults;
 
     private AppiumDriver appiumDriver;
@@ -18,7 +18,7 @@ public class SearchPage {
         PageFactory.initElements(appiumDriver, this);
     }
 
-    public void assertSearchResultsRelevance(String searchString) {
+    public void assertResultsRelevance(String searchString) {
         System.out.println("START");
         System.out.println(searchResults.size());
         searchResults.stream().map(WebElement::getText).forEach(System.out::println);
