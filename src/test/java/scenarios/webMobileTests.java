@@ -1,10 +1,14 @@
 package scenarios;
 
+import java.util.List;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pageObjects.PageObject;
-import pageObjects.webPages.WebPageObject;
+import pageObjects.GoogleWebPages.HomePage;
+import pageObjects.GoogleWebPages.SearchPage;
 import setup.BaseTest;
 
 public class webMobileTests extends BaseTest {
@@ -12,13 +16,15 @@ public class webMobileTests extends BaseTest {
     @Test(groups = {"web"}, description = "Open google.com, search EPAM and checking relevant search results")
     public void simpleWebTest() throws InterruptedException {
         PageObject pageObject = getPageObject();
-        WebPageObject webPageObject = (WebPageObject) pageObject.getEntryPageObject();
-        webPageObject.open();
+        HomePage homePage = (HomePage) pageObject.getEntryPageObject();
+        homePage.openHomePage();
         new WebDriverWait(getDriver(), 10)
             .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
-        Thread.sleep(3000);
-
+        SearchPage searchPageObject = homePage.google("EPAM");
+        new WebDriverWait(getDriver(), 10)
+            .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+        Thread.sleep(1000);
+        searchPageObject.assertSearchResultsRelevance("EPAM");
         System.out.println("Site opening done");
     }
-
 }

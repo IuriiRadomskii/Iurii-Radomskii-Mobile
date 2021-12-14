@@ -3,7 +3,7 @@ package pageObjects;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import pageObjects.nativePages.LoginPage;
-import pageObjects.webPages.WebPageObject;
+import pageObjects.GoogleWebPages.HomePage;
 import setup.IPageObject;
 
 import java.lang.reflect.Field;
@@ -20,7 +20,7 @@ public class PageObject implements IPageObject {
                 entryPageObject = new LoginPage(appiumDriver);
                 break;
             case "web":
-                entryPageObject = new WebPageObject(appiumDriver);
+                entryPageObject = new HomePage(appiumDriver);
                 break;
             default: throw new Exception("Can't create a page object for " + appType);
         }
@@ -35,10 +35,6 @@ public class PageObject implements IPageObject {
     }
 
     public Object getEntryPageObject() {
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
-            + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
-            + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(entryPageObject.toString());
         return entryPageObject;
     }
 }
