@@ -20,8 +20,7 @@ public class SearchPage {
     }
 
     public List<String> getResultsContainingRequestString(String searchString) {
-        System.out.println("START");
-        System.out.println(searchResults.size());
+        System.out.printf("Found %d results\n", searchResults.size());
         return searchResults.stream()
                      .map(WebElement::getText)
                      .filter(text -> text.contains(searchString))

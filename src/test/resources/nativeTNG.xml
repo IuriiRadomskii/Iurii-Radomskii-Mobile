@@ -5,13 +5,8 @@
     <parameter name="platformName" value="Android"/>
     <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"/>
     <test name="Native tests">
-        <groups>
-            <run>
-                <include name="native"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="scenarios"/>
-        </packages>
+        <classes>
+            <class name="scenarios.nativeMobileTests"/>
+        </classes>
     </test>
 </suite>

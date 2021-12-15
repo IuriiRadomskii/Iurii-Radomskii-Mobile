@@ -19,10 +19,12 @@ public class HomePage {
     }
 
     public void openHomePage() {
+        System.out.println("Open google.com");
         appiumDriver.navigate().to("http://www.google.com/");
     }
 
     public SearchPage google(String searchString) {
+        System.out.printf("Search in google '%s'\n", searchString);
         searchField.sendKeys("EPAM\n");
         return new SearchPage(appiumDriver);
     }
