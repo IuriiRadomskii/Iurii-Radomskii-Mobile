@@ -21,7 +21,7 @@ public class webMobileTests extends BaseTest {
         new WebDriverWait(getDriver(), 10)
             .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
         Thread.sleep(1000);
-        searchPageObject.assertResultsRelevance("EPAM");
+        searchPageObject.getResultsContainingRequestString("EPAM");
         System.out.println("Site opening done");
     }
 }

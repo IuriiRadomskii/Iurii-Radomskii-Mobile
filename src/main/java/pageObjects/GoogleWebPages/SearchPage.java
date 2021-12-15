@@ -2,13 +2,14 @@ package pageObjects.GoogleWebPages;
 
 import io.appium.java_client.AppiumDriver;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
 
-    @FindBy(xpath = "//input[@name='q']")
+    @FindBy(xpath = "//div[@aria-level='3']/div")
     private List<WebElement> searchResults;
 
     private AppiumDriver appiumDriver;
@@ -18,13 +19,12 @@ public class SearchPage {
         PageFactory.initElements(appiumDriver, this);
     }
 
-    public void assertResultsRelevance(String searchString) {
+    public List<String> getResultsContainingRequestString(String searchString) {
         System.out.println("START");
         System.out.println(searchResults.size());
-        searchResults.stream().map(element -> element.getAttribute("value")).forEach(System.out::println);
-        System.out.println("END");
-        /*searchResults.stream()
-                     .filter(w -> w.getText().contains(searchString))
-                     .forEach(w -> Assert.assertTrue(w.getText().contains(searchString)));*/
+        return searchResults.stream()
+                     .map(WebElement::getText)
+                     .filter(text -> text.contains(searchString))
+                     .collect(Collectors.toList());
     }
 }
