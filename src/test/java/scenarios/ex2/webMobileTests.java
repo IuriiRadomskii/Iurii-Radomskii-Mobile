@@ -1,15 +1,15 @@
-package scenarios;
+package scenarios.ex2;
 
-import TestData.Data;
+import ex2.TestData.Data;
 import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjects.PageObject;
-import pageObjects.GoogleWebPages.HomePage;
-import pageObjects.GoogleWebPages.SearchPage;
-import setup.BaseTest;
+import ex2.pageObjects.PageObject;
+import ex2.pageObjects.GoogleWebPages.HomePage;
+import ex2.pageObjects.GoogleWebPages.SearchPage;
+import ex2.setup.BaseTest;
 
 public class webMobileTests extends BaseTest {
 

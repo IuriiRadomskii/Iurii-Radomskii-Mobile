@@ -1,9 +1,9 @@
-package setup;
+package ex2.setup;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-import pageObjects.PageObject;
+import ex2.pageObjects.PageObject;
 
 import java.io.File;
 import java.net.MalformedURLException;

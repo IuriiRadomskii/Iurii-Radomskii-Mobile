@@ -1,10 +1,10 @@
-package pageObjects;
+package ex2.pageObjects;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
-import pageObjects.nativePages.LoginPage;
-import pageObjects.GoogleWebPages.HomePage;
-import setup.IPageObject;
+import ex2.pageObjects.nativePages.LoginPage;
+import ex2.pageObjects.GoogleWebPages.HomePage;
+import ex2.setup.IPageObject;
 
 import java.lang.reflect.Field;
 
