@@ -6,7 +6,7 @@
     <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"/>
     <test name="Native tests">
         <classes>
-            <class name="scenarios.nativeMobileTests"/>
+            <class name="scenarios.ex1.nativeMobileTests"/>
         </classes>
     </test>
 </suite>

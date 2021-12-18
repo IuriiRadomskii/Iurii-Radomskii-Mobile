@@ -6,7 +6,7 @@
     <parameter name="browserName" value="Chrome"/>
     <test name="Web tests">
         <classes>
-            <class name="scenarios.webMobileTests"/>
+            <class name="scenarios.ex1.webMobileTests"/>
         </classes>
     </test>
 </suite>

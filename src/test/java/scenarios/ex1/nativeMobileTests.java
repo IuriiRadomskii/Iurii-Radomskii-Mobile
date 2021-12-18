@@ -1,13 +1,13 @@
-package scenarios;
+package scenarios.ex1;
 
-import TestData.Data;
+import ex1.TestData.Data;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjects.nativePages.BudgetActivityPage;
-import pageObjects.nativePages.LoginPage;
-import pageObjects.nativePages.RegistrationPage;
-import pojos.User;
-import setup.BaseTest;
+import ex1.pageObjects.nativePages.BudgetActivityPage;
+import ex1.pageObjects.nativePages.LoginPage;
+import ex1.pageObjects.nativePages.RegistrationPage;
+import ex1.pojos.User;
+import ex1.setup.BaseTest;
 
 public class nativeMobileTests extends BaseTest {
 

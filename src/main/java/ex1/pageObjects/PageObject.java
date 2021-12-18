@@ -1,14 +1,10 @@
-package pageObjects;
+package ex1.pageObjects;
 
+import ex1.pageObjects.nativePages.LoginPage;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebElement;
-import pageObjects.nativePages.LoginPage;
-import pageObjects.GoogleWebPages.HomePage;
-import setup.IPageObject;
+import ex1.pageObjects.GoogleWebPages.HomePage;
 
-import java.lang.reflect.Field;
-
-public class PageObject implements IPageObject {
+public class PageObject {
 
     private final Object entryPageObject; // it should be set of web page or EPAM Test App WebElements
 
@@ -24,14 +20,6 @@ public class PageObject implements IPageObject {
                 break;
             default: throw new Exception("Can't create a page object for " + appType);
         }
-    }
-
-    @Override
-    public WebElement getWelement(String weName) throws NoSuchFieldException, IllegalAccessException {
-        // use reflection technique
-        Field field = entryPageObject.getClass().getDeclaredField(weName);
-        field.setAccessible(true);
-        return (WebElement) field.get(entryPageObject);
     }
 
     public Object getEntryPageObject() {

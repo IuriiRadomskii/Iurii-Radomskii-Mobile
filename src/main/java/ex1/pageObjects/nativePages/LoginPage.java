@@ -1,11 +1,11 @@
-package pageObjects.nativePages;
+package ex1.pageObjects.nativePages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import pojos.User;
+import ex1.pojos.User;
 
 public class LoginPage {
 

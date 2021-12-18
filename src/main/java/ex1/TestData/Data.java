@@ -1,7 +1,7 @@
-package TestData;
+package ex1.TestData;
 
 import org.testng.annotations.DataProvider;
-import pojos.User;
+import ex1.pojos.User;
 
 public class Data {
 
@@ -23,5 +23,4 @@ public class Data {
             {"EPAM"}
         };
     }
-
 }
