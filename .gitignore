@@ -5,5 +5,4 @@ target
 etc.
 .allure
 commands
-pom.xml
 apiCloud.properties
