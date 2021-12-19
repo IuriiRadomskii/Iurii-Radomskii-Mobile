@@ -1,7 +1,7 @@
-package ex2.TestData;
+package ex3.TestData;
 
 import org.testng.annotations.DataProvider;
-import ex2.pojos.User;
+import ex3.pojos.User;
 
 public class Data {
 

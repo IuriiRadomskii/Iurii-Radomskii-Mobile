@@ -5,3 +5,4 @@ target
 etc.
 .allure
 commands
+pom.xml

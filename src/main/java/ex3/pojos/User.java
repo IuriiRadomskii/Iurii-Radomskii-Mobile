@@ -1,4 +1,4 @@
-package ex2.pojos;
+package ex3.pojos;
 
 public class User {
 

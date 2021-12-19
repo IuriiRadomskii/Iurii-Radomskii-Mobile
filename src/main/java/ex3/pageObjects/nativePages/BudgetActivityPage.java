@@ -1,4 +1,4 @@
-package ex2.pageObjects.nativePages;
+package ex3.pageObjects.nativePages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
