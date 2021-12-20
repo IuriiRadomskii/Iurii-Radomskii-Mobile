@@ -18,7 +18,7 @@ public class webMobileTests extends BaseTest {
     public void simpleWebTest(String searchString) {
         PageObject pageObject = getPageObject();
         HomePage homePage = (HomePage) pageObject.getEntryPageObject();
-        homePage.openHomePage();
+        homePage.openGoogleHomePage();
         new WebDriverWait(getDriver(), 10)
             .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
         SearchPage searchPageObject = homePage.google(searchString);
