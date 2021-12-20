@@ -31,7 +31,6 @@ public class HomePage {
         System.out.printf("Search in google '%s'\n", searchString);
         searchField.sendKeys(searchString);
         dropDownVariants.get(0).click();
-
         return new SearchPage(appiumDriver);
     }
 }
