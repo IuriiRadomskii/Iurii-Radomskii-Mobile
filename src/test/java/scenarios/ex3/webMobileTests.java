@@ -19,8 +19,8 @@ public class webMobileTests extends BaseTest {
         PageObject pageObject = getPageObject();
         HomePage homePage = (HomePage) pageObject.getEntryPageObject();
         homePage.openGoogleHomePage();
-        Thread.sleep(5000);
         SearchPage searchPageObject = homePage.google(searchString);
+        Thread.sleep(5000);
         List<String> results = searchPageObject.getResultsContainingRequestString(searchString);
         Assert.assertTrue(results.size() > 0);
     }

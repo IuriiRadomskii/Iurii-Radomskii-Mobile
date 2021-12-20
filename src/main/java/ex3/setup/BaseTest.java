@@ -23,21 +23,19 @@ public class BaseTest implements IDriver {
 
     public PageObject getPageObject() { return po; }
 
-    @Parameters({"platformName", "appType", "deviceName", "udid", "browserName", "app",
+    @Parameters({"platformName", "appType", "udid", "browserName",
                     "appPackage", "appActivity", "bundleId"})
     @BeforeSuite(alwaysRun = true)
     public void setUp(String platformName,
                       String appType,
-                      @Optional("") String deviceName,
                       @Optional("") String udid,
                       @Optional("") String browserName,
-                      @Optional("") String app,
                       @Optional("") String appPackage,
                       @Optional("") String appActivity,
                       @Optional("") String bundleId
     ) throws Exception {
         System.out.println("Before: app type - " + appType);
-        setAppiumDriver(platformName, deviceName, udid, browserName, app, appPackage, appActivity, bundleId);
+        setAppiumDriver(platformName, udid, browserName, appPackage, appActivity, bundleId);
         setPageObject(appType, appiumDriver);
     }
 
@@ -47,29 +45,28 @@ public class BaseTest implements IDriver {
         appiumDriver.closeApp();
     }
 
-    private void setAppiumDriver(String platformName, String deviceName, String udid, String browserName,
-                                 String app, String appPackage, String appActivity, String bundleId) {
+    private void setAppiumDriver(String platformName, String udid, String browserName, String appPackage,
+                                 String appActivity, String bundleId) {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        // mandatory Android capabilities
+        // common capabilities
         capabilities.setCapability("platformName",platformName);
-        //capabilities.setCapability("deviceName", deviceName);
         capabilities.setCapability("udid", udid);
 
-        //if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
-
+        //common capabilities for web testing
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("chromedriverDisableBuildCheck","true");
 
-        /*// Capabilities for test of Android native app on EPAM Mobile Cloud
+        // Capabilities for test of Android native app on EPAM Mobile Cloud
         capabilities.setCapability("appPackage",appPackage);
         capabilities.setCapability("appActivity",appActivity);
 
         // Capabilities for test of iOS native app on EPAM Mobile Cloud
         capabilities.setCapability("bundleId",bundleId);
-        //if(platformName.equals("iOS")) capabilities.setCapability("automationName","XCUITest");*/
-
+        if(platformName.equals("iOS")) {
+            capabilities.setCapability("automationName","XCUITest");
+        }
 
         try {
             String token = URLEncoder.encode(ConfigUtils.get("token"), StandardCharsets.UTF_8.name());

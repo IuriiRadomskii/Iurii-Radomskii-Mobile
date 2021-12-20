@@ -1,6 +1,7 @@
 package ex3.pageObjects.GoogleWebPages;
 
 import io.appium.java_client.AppiumDriver;
+import java.util.List;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,9 @@ public class HomePage {
 
     @FindBy(xpath = "//input[@name='q']")
     private WebElement searchField;
+
+    @FindBy(xpath = "//li[@role='presentation']")
+    private List<WebElement> dropDownVariants;
 
     //XCUIElementTypeButton[@name='Search']
 
@@ -29,8 +33,9 @@ public class HomePage {
 
     public SearchPage google(String searchString) {
         System.out.printf("Search in google '%s'\n", searchString);
-        searchField.sendKeys("EPAM");
-        searchField.sendKeys(Keys.ENTER);
+        searchField.sendKeys(searchString);
+        dropDownVariants.get(0).click();
+
         return new SearchPage(appiumDriver);
     }
 }
