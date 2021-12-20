@@ -22,7 +22,7 @@ public class HomePage {
         PageFactory.initElements(appiumDriver, this);
     }
 
-    public void openHomePage() {
+    public void openGoogleHomePage() {
         System.out.println("Open google.com");
         appiumDriver.navigate().to("http://www.google.com/");
     }
