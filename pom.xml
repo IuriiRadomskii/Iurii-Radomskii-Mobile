@@ -50,23 +50,24 @@
 
     <profiles>
         <profile>
-            <id>native</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>src/test/resources/ex3/nativeTNG.xml</suite.file>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>web</id>
+            <id>android-cloud-web</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>./src/test/resources/ex3/webTNG.xml</suite.file>
+                <suite.file>./src/test/resources/ex3/androidCloudWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>android-cloud-native</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/ex3/androidCloudNativeTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
+
 </project>
