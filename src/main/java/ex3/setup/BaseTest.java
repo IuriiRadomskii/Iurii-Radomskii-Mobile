@@ -73,7 +73,6 @@ public class BaseTest implements IDriver {
 
         try {
             String token = URLEncoder.encode(ConfigUtils.get("token"), StandardCharsets.UTF_8.name());
-            System.out.println(token);
             String projectName = ConfigUtils.get("projectName");
             appiumDriver = new AppiumDriver(
                 new URL(String.format("https://%s:%s@mobilecloud.epam.com/wd/hub",projectName, token)), capabilities);

@@ -18,8 +18,6 @@ public class nativeMobileTests extends BaseTest {
           dataProviderClass = Data.class, dataProvider = "getTestUser")
     public void simpleNativeTest(User user) {
         LoginPage loginPage = (LoginPage) getPageObject().getEntryPageObject();
-        new WebDriverWait(getDriver(), 10)
-            .until(wd -> wd.findElement(By.id("platkovsky.alexey.epamtestapp:id/register_button")));
         loginPage.getRegisterBtn().click();
 
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
