@@ -54,8 +54,8 @@ public class BaseTest implements IDriver {
 
         // mandatory Android capabilities
         capabilities.setCapability("platformName",platformName);
-        capabilities.setCapability("deviceName", deviceName);
-        //capabilities.setCapability("udid", udid);
+        //capabilities.setCapability("deviceName", deviceName);
+        capabilities.setCapability("udid", udid);
 
         //if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
 
@@ -73,6 +73,7 @@ public class BaseTest implements IDriver {
 
         try {
             String token = URLEncoder.encode(ConfigUtils.get("token"), StandardCharsets.UTF_8.name());
+            System.out.println(token);
             String projectName = ConfigUtils.get("projectName");
             appiumDriver = new AppiumDriver(
                 new URL(String.format("https://%s:%s@mobilecloud.epam.com/wd/hub",projectName, token)), capabilities);

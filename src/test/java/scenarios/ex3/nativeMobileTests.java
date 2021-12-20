@@ -1,6 +1,9 @@
 package scenarios.ex3;
 
 import ex3.TestData.Data;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ex3.pageObjects.nativePages.BudgetActivityPage;
@@ -15,6 +18,8 @@ public class nativeMobileTests extends BaseTest {
           dataProviderClass = Data.class, dataProvider = "getTestUser")
     public void simpleNativeTest(User user) {
         LoginPage loginPage = (LoginPage) getPageObject().getEntryPageObject();
+        new WebDriverWait(getDriver(), 10)
+            .until(wd -> wd.findElement(By.id("platkovsky.alexey.epamtestapp:id/register_button")));
         loginPage.getRegisterBtn().click();
 
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
