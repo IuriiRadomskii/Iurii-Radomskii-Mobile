@@ -15,10 +15,6 @@ public class HomePage {
     @FindBy(xpath = "//li[@role='presentation']")
     private List<WebElement> dropDownVariants;
 
-    //XCUIElementTypeButton[@name='Search']
-
-    private WebElement searchButton;
-
     private AppiumDriver appiumDriver;
 
     public HomePage(AppiumDriver appiumDriver) {
