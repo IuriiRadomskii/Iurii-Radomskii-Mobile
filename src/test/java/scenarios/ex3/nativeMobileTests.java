@@ -1,15 +1,12 @@
 package scenarios.ex3;
 
 import ex3.TestData.Data;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ex3.pageObjects.nativePages.BudgetActivityPage;
 import ex3.pageObjects.nativePages.LoginPage;
 import ex3.pageObjects.nativePages.RegistrationPage;
-import ex3.pojos.User;
+import ex3.TestData.User;
 import ex3.setup.BaseTest;
 
 public class nativeMobileTests extends BaseTest {

@@ -1,0 +1,9 @@
+{
+    "desiredCapabilities": {
+        "platformName": "Android",
+        "platformVersion": "11",
+        "deviceName": "SAMSUNG SM-A525F",
+        "udid": "R58R94A154L",
+        "browserName": "chrome"
+    }
+}

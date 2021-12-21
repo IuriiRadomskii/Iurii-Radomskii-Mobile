@@ -5,6 +5,9 @@ public class RestUtils {
     public static final String baseURI = "https://mobilecloud.epam.com";
     public static final String projectName = "iurii_radomskii";
 
+    //Headers
+    //Authorization: Bearer {{Raw-api-token}}
+    //Content-Type: application/json
 
     //Find available devices
     //GET  {{baseURI}}/billing/unit/{{projectName}}/automation/api/device/android?web=chrome&version=7

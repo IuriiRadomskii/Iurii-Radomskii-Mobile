@@ -1,6 +1,6 @@
 package ex3.setup;
 
-import ex3.ConfigUtils;
+import ex3.AuthUtils;
 import io.appium.java_client.AppiumDriver;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -69,8 +69,8 @@ public class BaseTest implements IDriver {
         }
 
         try {
-            String token = URLEncoder.encode(ConfigUtils.get("token"), StandardCharsets.UTF_8.name());
-            String projectName = ConfigUtils.get("projectName");
+            String token = URLEncoder.encode(AuthUtils.get("token"), StandardCharsets.UTF_8.name());
+            String projectName = AuthUtils.get("projectName");
             appiumDriver = new AppiumDriver(
                 new URL(String.format("https://%s:%s@mobilecloud.epam.com/wd/hub",projectName, token)), capabilities);
         } catch (MalformedURLException | UnsupportedEncodingException e) {

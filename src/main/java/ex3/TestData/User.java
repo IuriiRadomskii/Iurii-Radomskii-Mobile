@@ -1,4 +1,4 @@
-package ex3.pojos;
+package ex3.TestData;
 
 public class User {
 

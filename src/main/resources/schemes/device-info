@@ -1,0 +1,17 @@
+{
+    "serial": "R58R94A154L",
+    "platform": "Android",
+    "version": "11",
+    "model": "SM-A525F",
+    "premium": true,
+    "deviceState": {
+        "emittedAt": 1640013518,
+        "state": "online"
+    },
+    "vendor": "SAMSUNG",
+    "deviceType": "phone",
+    "browsers": [
+        "chrome"
+    ],
+    "status": "available"
+}
