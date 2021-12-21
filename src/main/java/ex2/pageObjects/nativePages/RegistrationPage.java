@@ -30,11 +30,15 @@ public class RegistrationPage {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_cancel_button")
     private WebElement cancelBtn;
 
+    private AppiumDriver appiumDriver;
+
     public RegistrationPage(AppiumDriver appiumDriver) {
+        this.appiumDriver = appiumDriver;
         PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
     }
 
     public void fillRegistrationFields(User user) {
+        appiumDriver.hideKeyboard();
         emailTextField.sendKeys(user.getEmail());
         usernameTextField.sendKeys(user.getUserName());
         pswdTextField.sendKeys(user.getPassword());
