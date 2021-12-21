@@ -21,6 +21,9 @@ public class RegistrationPage {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_confirm_password")
     private WebElement confirmPswdTextField;
 
+    @AndroidFindBy(className = "android.widget.CheckedTextView")
+    private WebElement agreements;
+
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/register_new_account_button")
     private WebElement registerBtn;
 
@@ -36,6 +39,7 @@ public class RegistrationPage {
         usernameTextField.sendKeys(user.getUserName());
         pswdTextField.sendKeys(user.getPassword());
         confirmPswdTextField.sendKeys(user.getPassword());
+        agreements.click();
     }
 
     public WebElement getEmailTextField() {
