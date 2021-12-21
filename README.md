@@ -1,4 +1,4 @@
-## Iurii-Radomskii-Mobile
+## Iurie-Radomir-Mobile
 
 ### **Pre-conditions:**
 
@@ -13,5 +13,3 @@ run web tests: `mvn clean test -P web` (runs by default)
 run native tests: `mvn clean test -P native`
 
 Tested AVD: Google Pixel
-
-
