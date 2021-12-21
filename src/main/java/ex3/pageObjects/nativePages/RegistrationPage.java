@@ -34,10 +34,6 @@ public class RegistrationPage {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/register_new_account_button")
     private WebElement registerBtn;
 
-    @iOSXCUITFindBy(xpath = "")
-    @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_cancel_button")
-    private WebElement cancelBtn;
-
     private AppiumDriver appiumDriver;
 
     public RegistrationPage(AppiumDriver appiumDriver) {
