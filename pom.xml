@@ -57,14 +57,14 @@
                 </configuration>
             </plugin>
 
-            <!--<plugin>
+            <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>1.0.2</version>
                 <configuration>
                     <sourceDirectory>${basedir}/src/main/resources/schemes</sourceDirectory>
-                    <outputDirectory>${basedir}/src/main/java/ex3/restUtils/</outputDirectory>
-                    <targetPackage>responseEntities</targetPackage>
+                    <outputDirectory>${basedir}/src/main/java/</outputDirectory>
+                    <targetPackage>ex3.restUtils.responseEntities</targetPackage>
                     <addCompileSourceRoot>true</addCompileSourceRoot>
                     <sourceType>json</sourceType>
                     <annotationStyle>gson</annotationStyle>
@@ -76,7 +76,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>&lt;!&ndash;jsonschema2pojo plugin&ndash;&gt;-->
+            </plugin><!--jsonschema2pojo plugin-->
 
         </plugins>
     </build>

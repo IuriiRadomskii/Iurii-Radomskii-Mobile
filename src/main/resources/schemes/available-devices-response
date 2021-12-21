@@ -1,9 +1,38 @@
-{
-    "desiredCapabilities": {
-        "platformName": "Android",
-        "platformVersion": "11",
-        "deviceName": "SAMSUNG SM-A525F",
-        "udid": "R58R94A154L",
-        "browserName": "chrome"
+[
+    {
+        "desiredCapabilities": {
+            "platformName": "Android",
+            "platformVersion": "11",
+            "deviceName": "SAMSUNG SM-A525F",
+            "udid": "R58R94A154L",
+            "browserName": "chrome"
+        }
+    },
+    {
+        "desiredCapabilities": {
+            "platformName": "Android",
+            "platformVersion": "5.1.1",
+            "deviceName": "SAMSUNG SM-J320F",
+            "udid": "4200856cd4173500",
+            "browserName": "chrome"
+        }
+    },
+    {
+        "desiredCapabilities": {
+            "platformName": "Android",
+            "platformVersion": "11",
+            "deviceName": "GOOGLE Pixel 4a",
+            "udid": "0A211JEC222740",
+            "browserName": "chrome"
+        }
+    },
+    {
+        "desiredCapabilities": {
+            "platformName": "Android",
+            "platformVersion": "8.1.0",
+            "deviceName": "SAMSUNG SM-T580",
+            "udid": "5200dd305a7a15f7",
+            "browserName": "chrome"
+        }
     }
-}
+]
