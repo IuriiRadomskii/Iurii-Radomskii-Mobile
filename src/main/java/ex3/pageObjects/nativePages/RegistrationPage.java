@@ -69,8 +69,4 @@ public class RegistrationPage {
     public WebElement getRegisterBtn() {
         return registerBtn;
     }
-
-    public WebElement getCancelBtn() {
-        return cancelBtn;
-    }
 }
