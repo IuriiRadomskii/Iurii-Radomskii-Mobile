@@ -26,6 +26,7 @@ public class RegistrationPage {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_confirm_password")
     private WebElement confirmPswdTextField;
 
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSwitch[@value='0']")
     @AndroidFindBy(className = "android.widget.CheckedTextView")
     private WebElement agreements;
 
