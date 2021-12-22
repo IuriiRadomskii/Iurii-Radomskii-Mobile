@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class AuthUtils {
+public class PropertyUtil {
 
     public static String get(String propertyName) {
         FileInputStream inputStream;
