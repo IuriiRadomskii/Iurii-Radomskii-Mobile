@@ -10,7 +10,7 @@ public class AuthUtils {
         FileInputStream inputStream;
         Properties property = new Properties();
         try {
-            inputStream = new FileInputStream("apiCloud.properties");
+            inputStream = new FileInputStream("token.properties");
             property.load(inputStream);
             return property.getProperty(propertyName);
         } catch (IOException e) {
