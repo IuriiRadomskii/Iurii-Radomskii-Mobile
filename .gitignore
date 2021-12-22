@@ -3,6 +3,4 @@ target
 *.docx
 .idea
 etc.
-.allure
 commands
-apiCloud.properties
