@@ -3,7 +3,7 @@
     <parameter name="appType" value="web"/>
     <parameter name="platformName" value="iOS"/>
     <parameter name="browserName" value="Safari"/>
-    <parameter name="udid" value="f985fefcb40775c3af7d4a9fbc7955b530836711"/>
+    <parameter name="udid" value="54a829ebde9bda957d3600f6e67a4de61b88fac5"/>
     <test name="Web tests">
         <classes>
             <class name="scenarios.ex3.webMobileTests"/>
