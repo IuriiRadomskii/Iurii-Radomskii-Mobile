@@ -57,27 +57,6 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.jsonschema2pojo</groupId>
-                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-                <version>1.0.2</version>
-                <configuration>
-                    <sourceDirectory>${basedir}/src/main/resources/schemes</sourceDirectory>
-                    <outputDirectory>${basedir}/src/main/java/</outputDirectory>
-                    <targetPackage>ex3.restUtils.responseEntities</targetPackage>
-                    <addCompileSourceRoot>true</addCompileSourceRoot>
-                    <sourceType>json</sourceType>
-                    <annotationStyle>gson</annotationStyle>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin><!--jsonschema2pojo plugin-->
-
         </plugins>
     </build>
 
@@ -95,7 +74,7 @@
         <profile>
             <id>android-cloud-native</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/ex3/androidCloudNativeTNG.xml</suite.file>
@@ -105,7 +84,7 @@
         <profile>
             <id>ios-cloud-web</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/ex3/iosCloudWebTNG.xml</suite.file>
@@ -115,7 +94,7 @@
         <profile>
             <id>ios-cloud-native</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/ex3/iosCloudNativeTNG.xml</suite.file>
