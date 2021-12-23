@@ -71,8 +71,9 @@ public class BaseTest implements IDriver {
         try {
             String token = URLEncoder.encode(AuthUtils.get("token"), StandardCharsets.UTF_8.name());
             String projectName = AuthUtils.get("projectName");
+            String hubName = AuthUtils.get("hubName");
             appiumDriver = new AppiumDriver(
-                new URL(String.format("https://%s:%s@mobilecloud.epam.com/wd/hub",projectName, token)), capabilities);
+                new URL(String.format("https://%s:%s@%s/wd/hub",projectName, token, hubName)), capabilities);
         } catch (MalformedURLException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
