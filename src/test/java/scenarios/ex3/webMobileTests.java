@@ -15,12 +15,13 @@ public class webMobileTests extends BaseTest {
 
     @Test(groups = {"web"}, description = "Open google.com, search EPAM and assert that there is relevant results",
           dataProviderClass = Data.class, dataProvider = "getRequestedString")
-    public void simpleWebTest(String searchString) throws InterruptedException {
+    public void simpleWebTest(String searchString) {
         PageObject pageObject = getPageObject();
         HomePage homePage = (HomePage) pageObject.getEntryPageObject();
         homePage.openGoogleHomePage();
         SearchPage searchPageObject = homePage.google(searchString);
-        Thread.sleep(5000);
+        new WebDriverWait(getDriver(), 10)
+            .until(wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
         List<String> results = searchPageObject.getResultsContainingRequestString(searchString);
         Assert.assertTrue(results.size() > 0);
     }
