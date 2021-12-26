@@ -73,7 +73,7 @@ public class BaseTest implements IDriver {
             String projectName = AuthUtils.get("projectName");
             String hubName = AuthUtils.get("hubName");
             appiumDriver = new AppiumDriver(
-                new URL(String.format("https://%s:%s@%s/wd/hub",projectName, token, hubName)), capabilities);
+                new URL(String.format("https://%s:%s@%s",projectName, token, hubName)), capabilities);
         } catch (MalformedURLException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
