@@ -4,13 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class AuthUtils {
+public class InitPropertyUtils {
 
     public static String get(String propertyName) {
         FileInputStream inputStream;
         Properties property = new Properties();
         try {
-            inputStream = new FileInputStream("token.properties");
+            inputStream = new FileInputStream("test.properties");
             property.load(inputStream);
             return property.getProperty(propertyName);
         } catch (IOException e) {
