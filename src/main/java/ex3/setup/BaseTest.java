@@ -1,6 +1,6 @@
 package ex3.setup;
 
-import ex3.InitPropertyUtils;
+import ex3.PropertyUtils;
 import io.appium.java_client.AppiumDriver;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -69,9 +69,9 @@ public class BaseTest implements IDriver {
         }
 
         try {
-            String token = URLEncoder.encode(InitPropertyUtils.get("token"), StandardCharsets.UTF_8.name());
-            String projectName = InitPropertyUtils.get("projectName");
-            String hubName = InitPropertyUtils.get("hubName");
+            String token = URLEncoder.encode(PropertyUtils.get("token"), StandardCharsets.UTF_8.name());
+            String projectName = PropertyUtils.get("projectName");
+            String hubName = PropertyUtils.get("hubName");
             appiumDriver = new AppiumDriver(
                 new URL(String.format("https://%s:%s@%s",projectName, token, hubName)), capabilities);
         } catch (MalformedURLException | UnsupportedEncodingException e) {
