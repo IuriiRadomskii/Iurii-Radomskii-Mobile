@@ -1,6 +1,6 @@
-package ex2.pageObjects.GoogleWebPages;
+package ex3.pageObjects.GoogleWebPages;
 
-import ex2.utils.PropertyUtil;
+import ex3.PropertyUtils;
 import io.appium.java_client.AppiumDriver;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -24,8 +24,7 @@ public class HomePage {
 
     public void openGoogleHomePage() {
         System.out.println("Open google.com");
-        String googleURL = PropertyUtil.get("googleURL");
-        appiumDriver.navigate().to(googleURL);
+        appiumDriver.navigate().to(PropertyUtils.get("homeGoogleURL"));
     }
 
     public SearchPage google(String searchString) {

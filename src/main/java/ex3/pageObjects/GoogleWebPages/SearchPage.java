@@ -1,4 +1,4 @@
-package ex2.pageObjects.GoogleWebPages;
+package ex3.pageObjects.GoogleWebPages;
 
 import io.appium.java_client.AppiumDriver;
 import java.util.List;
