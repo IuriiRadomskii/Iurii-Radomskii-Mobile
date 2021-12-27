@@ -1,4 +1,4 @@
-package pageObjects;
+package ex2.pageObjects.nativePages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -6,14 +6,16 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class NativePageObject  {
+public class BudgetActivityPage {
 
-    @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/email_sign_in_button")
-    WebElement signInBtn;
+    @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/add_new_expense")
+    private WebElement addExpenseBtn;
 
-    public NativePageObject(AppiumDriver appiumDriver) {
+    public BudgetActivityPage(AppiumDriver appiumDriver) {
         PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
     }
 
-
+    public WebElement getAddExpenseBtn() {
+        return addExpenseBtn;
+    }
 }
