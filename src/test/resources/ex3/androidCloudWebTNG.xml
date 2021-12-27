@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web mobile testing Suite">
+    <parameter name="appType" value="web"/>
+    <parameter name="udid" value="ce11171b791f6c0603"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="browserName" value="Chrome"/>
+    <test name="Web tests">
+        <classes>
+            <class name="scenarios.ex3.webMobileTests"/>
+        </classes>
+    </test>
+</suite>

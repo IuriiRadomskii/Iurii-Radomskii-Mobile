@@ -71,5 +71,46 @@
                 <suite.file>./src/test/resources/ex2/webTNG.xml</suite.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>android-cloud-web</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/ex3/androidCloudWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>android-cloud-native</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/ex3/androidCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ios-cloud-web</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/ex3/iosCloudWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ios-cloud-native</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/ex3/iosCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
     </profiles>
 </project>
