@@ -68,7 +68,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>./src/test/resources/ex2/webTNG.xml</suite.file>
+                <suite.file>src/test/resources/ex2/webTNG.xml</suite.file>
             </properties>
         </profile>
 
